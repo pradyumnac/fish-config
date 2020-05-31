@@ -1,4 +1,4 @@
 function fish_greeting
-    neofetch
+    /* neofetch */
     fortune
 end
