@@ -1,4 +1,4 @@
 # Defined in - @ line 1
-function rainbowstream --description 'alias rainbowstream ./devenvpy/bin/rainbowstream'
-	~/devenvpy/bin/rainbowstream  $argv;
+function rainbowstream --description 'alias rainbowstream ./softenvpy/bin/rainbowstream'
+	~/softenvpy/bin/rainbowstream  $argv;
 end
