@@ -10,4 +10,4 @@ test -e ~/.local/bin; and set -gx PATH $PATH ~/.local/bin
 test -e /opt/wine-staging/bin; and set -gx PATH $PATH /opt/wine-staging/bin
 
 # WSl workaround to cd to home path
-cd
+# cd 
