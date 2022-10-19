@@ -1,3 +1,3 @@
 function fish_greeting
-fortune
+  echo (date +%c): Machine - (uname -a) >> ~/.config/fish/history/shell_login.log
 end
