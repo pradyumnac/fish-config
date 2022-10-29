@@ -21,3 +21,6 @@ test -e /opt/wine-staging/bin; and set -gx PATH $PATH /opt/wine-staging/bin
 
 # FZF setup
 # fzf_configure_bindings --git_status=\cg --history=\ch --variables= --processes=
+
+# Starship
+starship init fish | source
