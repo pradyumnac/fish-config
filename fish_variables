@@ -1,7 +1,7 @@
 # This file contains fish universal variable definitions.
 # VERSION: 3.0
 SETUVAR --export EDITOR:nvim
-SETUVAR --export --path GOPATH:/home/pi/go
+SETUVAR --export --path GOPATH:~/go
 SETUVAR --export PAGER:less
 SETUVAR --export VISUAL:nvim
 SETUVAR __fish_init_2_39_8:\x1d
