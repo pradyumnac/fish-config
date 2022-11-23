@@ -1,4 +1,3 @@
-# Defined in - @ line 1
-function speedtest --description 'alias speedtest ~/softenvpy/bin/speedtest'
-	~/softenvpy/bin/speedtest  $argv;
+function speedtest --wraps='curl -s https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py | python -' --description 'alias speedtest curl -s https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py | python -'
+  curl -s https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py | python - $argv; 
 end
