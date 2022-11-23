@@ -1,1 +1,1 @@
-/home/doe/repos/fzf/shell/key-bindings.fish
+/home/pradyumna/.fzf/shell/key-bindings.fish
