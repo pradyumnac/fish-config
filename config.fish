@@ -6,6 +6,7 @@ set -x LANG en_UK.UTF-8
 
 
 set -gx fish_greeting ''
+set -gx FZF_DEFAULT_COMMAND 'rg --files --no-ignore-vcs --hidden'
 
 # PATH Variables
 test -e ~/.go; and set -gx GOPATH ~/.go
