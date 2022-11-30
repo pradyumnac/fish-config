@@ -20,11 +20,11 @@ test -e ~/.cargo/bin; and set -gx PATH $PATH ~/.cargo/bin
 
 # FZF setup
 # fzf_configure_bindings --git_status=\cg --history=\ch --variables= --processes=
-set -gx FZF_DEFAULT_COMMAND 'rg --files'
 set -gx FZF_DEFAULT_OPTS '-m --height 50% --border'
 
 if type rg &> /dev/null
-  set -gx FZF_DEFAULT_COMMAND 'rg --files --no-ignore-vcs --hidden'
+  set -gx FZF_DEFAULT_COMMAND 'rg --files --hidden'
+  # set -gx FZF_DEFAULT_COMMAND 'rg --files --no-ignore-vcs --hidden'
 end
 
 # Starship
