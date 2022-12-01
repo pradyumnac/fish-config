@@ -1,0 +1,55 @@
+MESA-INTEL: warning: Performance support disabled, consider sysctl dev.i915.perf_stream_paranoid=0
+
+libva error: vaGetDriverNameByIndex() failed with unknown libva error, driver_name = (null)
+[31736:31736:1201/171542.594296:ERROR:interface_endpoint_client.cc(694)] Message 0 rejected by interface blink.mojom.WidgetHost
+[31781:31781:1201/171546.483599:ERROR:gl_surface_presentation_helper.cc(260)] GetVSyncParametersIfAvailable() failed for 1 times!
+[31781:31781:1201/171554.635085:ERROR:gl_surface_presentation_helper.cc(260)] GetVSyncParametersIfAvailable() failed for 2 times!
+[31781:31781:1201/171554.641492:ERROR:gl_surface_presentation_helper.cc(260)] GetVSyncParametersIfAvailable() failed for 3 times!
+MESA-INTEL: warning: Performance support disabled, consider sysctl dev.i915.perf_stream_paranoid=0
+
+libva error: vaGetDriverNameByIndex() failed with unknown libva error, driver_name = (null)
+[32134:32134:1201/171748.464657:ERROR:interface_endpoint_client.cc(694)] Message 0 rejected by interface blink.mojom.WidgetHost
+[32179:32179:1201/171754.907489:ERROR:gl_surface_presentation_helper.cc(260)] GetVSyncParametersIfAvailable() failed for 1 times!
+MESA-INTEL: warning: Performance support disabled, consider sysctl dev.i915.perf_stream_paranoid=0
+
+libva error: vaGetDriverNameByIndex() failed with unknown libva error, driver_name = (null)
+[32517:32517:1201/171817.593351:ERROR:gl_surface_presentation_helper.cc(260)] GetVSyncParametersIfAvailable() failed for 1 times!
+MESA-INTEL: warning: Performance support disabled, consider sysctl dev.i915.perf_stream_paranoid=0
+
+libva error: vaGetDriverNameByIndex() failed with unknown libva error, driver_name = (null)
+MESA-INTEL: warning: Performance support disabled, consider sysctl dev.i915.perf_stream_paranoid=0
+
+libva error: vaGetDriverNameByIndex() failed with unknown libva error, driver_name = (null)
+Opening in existing browser session.
+[32800:32800:1201/171823.602375:ERROR:interface_endpoint_client.cc(694)] Message 0 rejected by interface blink.mojom.WidgetHost
+MESA-INTEL: warning: Performance support disabled, consider sysctl dev.i915.perf_stream_paranoid=0
+
+libva error: vaGetDriverNameByIndex() failed with unknown libva error, driver_name = (null)
+MESA-INTEL: warning: Performance support disabled, consider sysctl dev.i915.perf_stream_paranoid=0
+
+libva error: vaGetDriverNameByIndex() failed with unknown libva error, driver_name = (null)
+[33621:33621:1201/171959.081900:ERROR:gl_surface_presentation_helper.cc(260)] GetVSyncParametersIfAvailable() failed for 1 times!
+[33621:33621:1201/171959.090705:ERROR:gl_surface_presentation_helper.cc(260)] GetVSyncParametersIfAvailable() failed for 2 times!
+[33621:33621:1201/171959.097247:ERROR:gl_surface_presentation_helper.cc(260)] GetVSyncParametersIfAvailable() failed for 3 times!
+MESA-INTEL: warning: Performance support disabled, consider sysctl dev.i915.perf_stream_paranoid=0
+
+libva error: vaGetDriverNameByIndex() failed with unknown libva error, driver_name = (null)
+[33949:33949:1201/172053.229539:ERROR:gl_surface_presentation_helper.cc(260)] GetVSyncParametersIfAvailable() failed for 1 times!
+[33949:33949:1201/172053.235019:ERROR:gl_surface_presentation_helper.cc(260)] GetVSyncParametersIfAvailable() failed for 2 times!
+[33949:33949:1201/172057.935950:ERROR:gl_surface_presentation_helper.cc(260)] GetVSyncParametersIfAvailable() failed for 3 times!
+MESA-INTEL: warning: Performance support disabled, consider sysctl dev.i915.perf_stream_paranoid=0
+
+libva error: vaGetDriverNameByIndex() failed with unknown libva error, driver_name = (null)
+[34287:34287:1201/172219.919727:ERROR:gl_surface_presentation_helper.cc(260)] GetVSyncParametersIfAvailable() failed for 1 times!
+[34287:34287:1201/172221.143922:ERROR:gl_surface_presentation_helper.cc(260)] GetVSyncParametersIfAvailable() failed for 2 times!
+[34287:34287:1201/172229.200845:ERROR:gl_surface_presentation_helper.cc(260)] GetVSyncParametersIfAvailable() failed for 3 times!
+MESA-INTEL: warning: Performance support disabled, consider sysctl dev.i915.perf_stream_paranoid=0
+
+libva error: vaGetDriverNameByIndex() failed with unknown libva error, driver_name = (null)
+[34665:34665:1201/172424.206119:ERROR:interface_endpoint_client.cc(694)] Message 0 rejected by interface blink.mojom.WidgetHost
+[34712:34712:1201/172438.377108:ERROR:gl_surface_presentation_helper.cc(260)] GetVSyncParametersIfAvailable() failed for 1 times!
+MESA-INTEL: warning: Performance support disabled, consider sysctl dev.i915.perf_stream_paranoid=0
+
+libva error: vaGetDriverNameByIndex() failed with unknown libva error, driver_name = (null)
+[35001:35001:1201/172501.318588:ERROR:interface_endpoint_client.cc(694)] Message 0 rejected by interface blink.mojom.WidgetHost
+[35048:35048:1201/172536.073924:ERROR:gl_surface_presentation_helper.cc(260)] GetVSyncParametersIfAvailable() failed for 1 times!
