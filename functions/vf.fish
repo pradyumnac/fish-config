@@ -1,11 +1,10 @@
-# Defined in - @ line 1
-function vf --wraps='v (fzf)' --description 'alias vf v (fzf)'
-  set __filepath (fzf)
-  if test -n "$__filepath" 
-    echo $__filepath
-    v $__filepath
+function vf 
+  set __filepaths (fzf)
+  if test -n "$__filepaths" 
+    echo $__filepaths
+    v -p $__filepaths
   else
     echo 'Cancelled by user!'
   end
-  
+
 end
