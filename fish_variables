@@ -2,17 +2,12 @@
 # VERSION: 3.0
 SETUVAR --export BAT_THEME:Dracula
 SETUVAR --export EDITOR:nvim
-SETUVAR --export LC_ALL:en_US\x2eUTF\x2d8
-SETUVAR --export LC_CTYPE:en_US\x2eUTF\x2d8
 SETUVAR --export PAGER:less
 SETUVAR --export VISUAL:nvim
 SETUVAR __fish_init_2_39_8:\x1d
 SETUVAR __fish_init_2_3_0:\x1d
 SETUVAR __fish_init_3_x:\x1d
-SETUVAR __fish_initialized:3100
-SETUVAR _fisher_jorgebucaran_2F_fisher_files:\x7e/\x2econfig/fish/functions/fisher\x2efish\x1e\x7e/\x2econfig/fish/completions/fisher\x2efish
-SETUVAR _fisher_plugins:jorgebucaran/fisher
-SETUVAR _fisher_upgraded_to_4_4:\x1d
+SETUVAR __fish_initialized:3400
 SETUVAR fish_color_autosuggestion:555
 SETUVAR fish_color_cancel:\x2d\x2dreverse
 SETUVAR fish_color_command:5f87ff
@@ -53,4 +48,3 @@ SETUVAR fish_pager_color_selected_background:\x2d\x2dreverse
 SETUVAR fish_pager_color_selected_completion:\x1d
 SETUVAR fish_pager_color_selected_description:\x1d
 SETUVAR fish_pager_color_selected_prefix:\x1d
-SETUVAR fish_user_paths:/home/doe/repos/fzf/bin\x1e/home/pradyumna/repos/env/\x2efzf/bin\x1e/home/pradyumna/\x2efzf/bin
