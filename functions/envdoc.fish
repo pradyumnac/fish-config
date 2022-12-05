@@ -12,9 +12,9 @@ function envdoc --description 'prints install instructions from env repo'
     set -f __matchstring (echo $__matched|cut -d: -f3)
 
     # echo $__matchstring $__filename $__lineno
-  
-    commandline -r (awk 'BEGIN {IGNORECASE = 1} /@Canard/' RS= $__filename|sed 's/^..//')
-    # quirks - sed is not hpnoring case insensitive search 
+
+    commandline -r (cat apps/go-cli-apps.sh| rg -U '\n.*glow.*\n' -i|tail -n +2|sed 's/^..//')
+    # quirks - sed is not ignoring case insensitive search 
     # sed -n '/@Canard/,/^$/Ig' apps/go-cli-apps.sh
 
     return
@@ -26,7 +26,9 @@ function envdoc --description 'prints install instructions from env repo'
     v (rg -i "@$argv[1]" ~/repos/env --vimgrep|cut -z -d : -f 1) +/@$argv[1] -c "set ignorecase" -c "normal yap" 
   else
     # Default
-    echo (awk "BEGIN {IGNORECASE = 1} /@$argv[1]/" RS= $__filename|sed 's/^..//')
+    cat apps/go-cli-apps.sh| rg -U '\n.*glow.*\n' -i|tail -n +2|sed 's/^..//' 
+    # awk "BEGIN {IGNORECASE = 1} /@$argv[1]/" RS= $__filename|sed 's/^..//' | cat
+    # echo (awk "BEGIN {IGNORECASE = 1} /@$argv[1]/" RS= $__filename|sed 's/^..//')
   end
 
 
