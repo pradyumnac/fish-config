@@ -5,31 +5,37 @@ function envdoc --description 'prints install instructions from env repo'
   set -f options r/run e/editor  
   argparse -n envdoc $options -- $argv 
 
+  set -f pkgname $argv[1]
+
+  set -f matched (rg -i @$pkgname ~/repos/env --vimgrep)   
+  set -f filename (echo $matched|cut -d: -f1)
+  # set -f lineno (echo $matched|cut -d: -f2)
+  # set -f matchstring (echo $matched|cut -d: -f3)
+
+  set -f paratext (cat $filename|rg -U "\n.*$pkgname*\n" -i|sed 's/^..//')
+  # set -f paratext (cat $filename|rg -U "\n.*@$pkgname*\n" -i)
+
+  # echo $filename $pkgname
+  # echo $paratext 
+  cat $filename|rg -U "\n.*$pkgname*\n" -i|sed 's/^..//'
+
+  return
+
   if set -q _flag_run
-    set -f __matched (rg -i @$argv[1] ~/repos/env --vimgrep)   
-    set -f __filename (echo $__matched|cut -d: -f1)
-    set -f __lineno (echo $__matched|cut -d: -f2)
-    set -f __matchstring (echo $__matched|cut -d: -f3)
-
-    # echo $__matchstring $__filename $__lineno
-
-    commandline -r (cat apps/go-cli-apps.sh| rg -U '\n.*glow.*\n' -i|tail -n +2|sed 's/^..//')
-    # quirks - sed is not ignoring case insensitive search 
-    # sed -n '/@Canard/,/^$/Ig' apps/go-cli-apps.sh
-
+    commandline -r $paratext
     return
   end
 
   if set -q _flag_editor
-    # v (rg -i "@$argv[1]" ~/repos/env --vimgrep|cut -z -d : -f 1) +/"@$argv[1]/i" -c "normal yap" +qall --headless 
-    
-    v (rg -i "@$argv[1]" ~/repos/env --vimgrep|cut -z -d : -f 1) +/@$argv[1] -c "set ignorecase" -c "normal yap" 
+    v $filename +/@$pkgname -c "normal yap" 
   else
-    # Default
-    cat apps/go-cli-apps.sh| rg -U '\n.*glow.*\n' -i|tail -n +2|sed 's/^..//' 
-    # awk "BEGIN {IGNORECASE = 1} /@$argv[1]/" RS= $__filename|sed 's/^..//' | cat
-    # echo (awk "BEGIN {IGNORECASE = 1} /@$argv[1]/" RS= $__filename|sed 's/^..//')
+    # Default - not run, nor editor
+    echo $paratext|cat  
   end
-
-
 end
+
+# v (rg -i "@$argv[1]" ~/repos/env --vimgrep|cut -z -d : -f 1) +/"@$argv[1]/i" -c "normal yap" +qall --headless 
+# quirks - sed is not ignoring case insensitive search 
+# sed -n '/@Canard/,/^$/Ig' apps/go-cli-apps.sh
+# awk "BEGIN {IGNORECASE = 1} /@$argv[1]/" RS= $__filename|sed 's/^..//' | cat -issue failed to pass bash varoables to aek
+# echo (awk "BEGIN {IGNORECASE = 1} /@$argv[1]/" RS= $__filename|sed 's/^..//') # issue - ignore case not working. termux
