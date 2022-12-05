@@ -12,17 +12,12 @@ function envdoc --description 'prints install instructions from env repo'
   # set -f lineno (echo $matched|cut -d: -f2)
   # set -f matchstring (echo $matched|cut -d: -f3)
 
-  set -f paratext (cat $filename|rg -U "\n.*$pkgname*\n" -i|sed 's/^..//')
-  # set -f paratext (cat $filename|rg -U "\n.*@$pkgname*\n" -i)
 
   # echo $filename $pkgname
-  # echo $paratext 
-  cat $filename|rg -U "\n.*$pkgname*\n" -i|sed 's/^..//'
-
-  return
+  # echo (rg -U -I "\n.*$pkgname.*\n" -i $filename|sed -e 's/^..//') 
 
   if set -q _flag_run
-    commandline -r $paratext
+    commandline -r (rg -U -I "\n.*$pkgname.*\n" -i $filename|sed -e 's/^..//')
     return
   end
 
@@ -30,7 +25,7 @@ function envdoc --description 'prints install instructions from env repo'
     v $filename +/@$pkgname -c "normal yap" 
   else
     # Default - not run, nor editor
-    echo $paratext|cat  
+    rg -U -I "\n.*$pkgname.*\n" -i $filename|sed -e 's/^..//'  
   end
 end
 
