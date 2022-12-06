@@ -14,7 +14,8 @@ function envdoc --description 'prints install instructions from env repo'
 
 
   # echo $filename $pkgname
-  # echo (rg -U -I "\n.*$pkgname.*\n" -i $filename|sed -e 's/^..//') 
+  echo (cat $filename|awk -v RS= -v ORS='\n\n' -v pkgname='$pkgname' -v IGNORECASE=1 '/.*# @'$pkgname'.*/') 
+  return
 
   if set -q _flag_run
     commandline -r (rg -U -I "\n.*$pkgname.*\n" -i $filename|sed -e 's/^..//')
@@ -29,8 +30,11 @@ function envdoc --description 'prints install instructions from env repo'
   end
 end
 
-# v (rg -i "@$argv[1]" ~/repos/env --vimgrep|cut -z -d : -f 1) +/"@$argv[1]/i" -c "normal yap" +qall --headless 
+# Ignore case is not working for some reason
+# echo (cat $filename|awk -v RS= -v ORS='\n\n' -v pkgname='$pkgname' -v IGNORECASE=1 '/.*# @'$pkgname'.*/') 
+#
 # quirks - sed is not ignoring case insensitive search 
 # sed -n '/@Canard/,/^$/Ig' apps/go-cli-apps.sh
+#
 # awk "BEGIN {IGNORECASE = 1} /@$argv[1]/" RS= $__filename|sed 's/^..//' | cat -issue failed to pass bash varoables to aek
 # echo (awk "BEGIN {IGNORECASE = 1} /@$argv[1]/" RS= $__filename|sed 's/^..//') # issue - ignore case not working. termux
