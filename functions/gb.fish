@@ -3,10 +3,29 @@ function gb --description 'Browse git'
   # -k : create a repo and keep
   # -f : invoke fzf -> nvim
   
-  set -l options f/fzf k/keep 
+  set -l options f/fzf k/keep l/local 
   set -l foldername .tmp
   set -l curdir (pwd)
   argparse -n gb $options -- $argv 
+
+  set -l folderlist (cd ~/repos;ls;cd $curdir)
+  set arg_repo_name (echo $argv|sed -e 's,\(.*\)/,,')
+
+  if set -q _flag_local
+    cd ~/repos/$arg_repo_name
+    v
+    return
+  end
+
+  if contains $arg_repo_name $folderlist
+    read -l -P "$arg_repo_name is present in ~/repos. Use this(Y/n)?" confirm_yn
+
+    if begin [ "$confirm_yn" = "y" ]; or [ "$confirm_yn" = "yes" ]; end
+      cd ~/repos/$arg_repo_name
+      v
+      return
+    end
+  end
 
   if set -q _flag_keep
     set foldername (echo $argv|sed -e 's,\(.*\)/,,')
@@ -14,7 +33,6 @@ function gb --description 'Browse git'
 
   mkdir -p ~/repos/$foldername
   cd ~/repos/$foldername
-  pwd
 
   echo "creating dir $foldername and running clone"
   gh repo clone $argv . 
