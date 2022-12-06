@@ -13,16 +13,21 @@ function gb --description 'Browse git'
 
   if set -q _flag_local
     cd ~/repos/$arg_repo_name
-    v
+    if [ "$status" = "0" ]
+      if set -q _flag_fzf; vf; else; v; end
+    else
+      echo "ERROR: repo $arg_repo_name not found in ~/repos"
+    end
     return
   end
 
   if contains $arg_repo_name $folderlist
     read -l -P "$arg_repo_name is present in ~/repos. Use this(Y/n)?" confirm_yn
+    set confirm_yn (string lower $confirm_yn)
 
-    if begin [ "$confirm_yn" = "y" ]; or [ "$confirm_yn" = "yes" ]; end
+    if begin [ "$confirm_yn" != "n" ]; or [ "$confirm_yn" != "no" ]; end
       cd ~/repos/$arg_repo_name
-      v
+      if set -q _flag_fzf; vf; else; v; end
       return
     end
   end
