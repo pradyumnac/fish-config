@@ -1,24 +1,29 @@
 function envdoc --description 'prints install instructions from env repo'
-  # git browse
+  # fetch install info from env dir
+  # Each paragraph has to be carefully written to adhere to format. Sample below
+  # TODO: Ignore case is still not working. set all packaghenames in lowercase
   # -r : type in shell prompt for run 
+  # -e : open in VIM
   
-  set -f options r/run e/editor  
+  ########### SAMPLE BELOW ######################
+  # # @pythoncliapps
+  # bash apps/python-cli-apps.sh
+  
+  set -l options r/run e/editor  
   argparse -n envdoc $options -- $argv 
 
-  set -f pkgname $argv[1]
-
-  set -f matched (rg -i @$pkgname ~/repos/env --vimgrep)   
-  set -f filename (echo $matched|cut -d: -f1)
+  set -l pkgname $argv[1]
+  set -l matched (rg -i @$pkgname ~/repos/env --vimgrep)   
+  set -l filename (echo $matched|cut -d: -f1)
   # set -f lineno (echo $matched|cut -d: -f2)
   # set -f matchstring (echo $matched|cut -d: -f3)
+  echo $filename $pkgname
 
-
-  # echo $filename $pkgname
-  echo (cat $filename|awk -v RS= -v ORS='\n\n' -v pkgname='$pkgname' -v IGNORECASE=1 '/.*# @'$pkgname'.*/') 
-  return
+  # The mariable method messes with the line endings
+  # set -l matchedblock (cat $filename|awk -v RS= -v ORS='\n\n' -v pkgname='$pkgname' -v IGNORECASE=1 '/.*# @'$pkgname'.*/') 
 
   if set -q _flag_run
-    commandline -r (rg -U -I "\n.*$pkgname.*\n" -i $filename|sed -e 's/^..//')
+    commandline -r (cat $filename|awk -v RS= -v ORS='\n\n' -v pkgname='$pkgname' -v IGNORECASE=1 '/.*# @'$pkgname'.*/'|sed 's/^..//')
     return
   end
 
@@ -26,7 +31,7 @@ function envdoc --description 'prints install instructions from env repo'
     v $filename +/@$pkgname -c "normal yap" 
   else
     # Default - not run, nor editor
-    rg -U -I "\n.*$pkgname.*\n" -i $filename|sed -e 's/^..//'  
+  cat $filename|awk -v RS= -v ORS='\n\n' -v pkgname='$pkgname' -v IGNORECASE=1 '/.*# @'$pkgname'.*/'|sed 's/^..//'
   end
 end
 
