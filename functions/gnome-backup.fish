@@ -1,3 +1,3 @@
-function gnometerm-backup 
+function gnome-backup
   dconf dump / >  $argv; 
 end
