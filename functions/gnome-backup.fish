@@ -1,3 +1,6 @@
 function gnome-backup
-  dconf dump / >  $argv; 
+  tilix-backup
+  gnomehotkeys-backup
+  gnometerm-backup
+  dconf dump / >  ~/repos/env/config/gnome.ini; 
 end
