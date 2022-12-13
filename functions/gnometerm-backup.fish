@@ -1,3 +1,3 @@
-function gnometerm-backup 
-  dconf /org/gnome/terminal/ > ~/repos/env/config/gnometerm.dconf
+function gnometerm-backup
+  dconf dump /org/gnome/terminal/ > ~/repos/env/config/gnometerm.dconf
 end
