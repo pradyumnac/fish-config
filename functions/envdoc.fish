@@ -1,4 +1,4 @@
-# Defined in /tmp/fish.343uTe/envdoc.fish @ line 2
+# Defined in /tmp/fish.yxc0Cr/envdoc.fish @ line 2
 function envdoc --description 'prints install instructions from env repo'
   # fetch install info from env dir
   # Each paragraph has to be carefully written to adhere to format. Sample below
@@ -24,7 +24,7 @@ function envdoc --description 'prints install instructions from env repo'
   # set -l matchedblock (cat $filename|awk -v RS= -v ORS='\n\n' -v pkgname='$pkgname' -v IGNORECASE=1 '/.*# @'$pkgname'.*/') 
 
   if set -q _flag_run
-    commandline -r (cat $filename|awk -v RS= -v ORS='\n\n' -v pkgname='$pkgname' -v IGNORECASE=1 '/.*# @'$pkgname'.*/'|sed 's/^..//')
+    commandline -r (cat $filename|awk -v RS= -v ORS='\n\n' -v pkgname='$pkgname' -v IGNORECASE=1 '/.*# @'$pkgname'.*/' #|sed 's/^..//')
     return
   end
 
