@@ -1,3 +1,3 @@
 function ssh400
-  ssh pc@r400 $argv; 
+  ssh pradyumna@r400 $argv; 
 end
