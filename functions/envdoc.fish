@@ -1,3 +1,4 @@
+# Defined in /tmp/fish.343uTe/envdoc.fish @ line 2
 function envdoc --description 'prints install instructions from env repo'
   # fetch install info from env dir
   # Each paragraph has to be carefully written to adhere to format. Sample below
@@ -31,15 +32,6 @@ function envdoc --description 'prints install instructions from env repo'
     v $filename +/@$pkgname -c "normal yap" 
   else
     # Default - not run, nor editor
-  cat $filename|awk -v RS= -v ORS='\n\n' -v pkgname='$pkgname' -v IGNORECASE=1 '/.*# @'$pkgname'.*/'|sed 's/^..//'
+  cat $filename|awk -v RS= -v ORS='\n\n' -v pkgname='$pkgname' -v IGNORECASE=1 '/.*# @'$pkgname'.*/' # |sed 's/^..//'
   end
 end
-
-# Ignore case is not working for some reason
-# echo (cat $filename|awk -v RS= -v ORS='\n\n' -v pkgname='$pkgname' -v IGNORECASE=1 '/.*# @'$pkgname'.*/') 
-#
-# quirks - sed is not ignoring case insensitive search 
-# sed -n '/@Canard/,/^$/Ig' apps/go-cli-apps.sh
-#
-# awk "BEGIN {IGNORECASE = 1} /@$argv[1]/" RS= $__filename|sed 's/^..//' | cat -issue failed to pass bash varoables to aek
-# echo (awk "BEGIN {IGNORECASE = 1} /@$argv[1]/" RS= $__filename|sed 's/^..//') # issue - ignore case not working. termux
