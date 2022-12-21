@@ -1,4 +1,4 @@
-# Defined in - @ line 1
-function gotof --wraps='cd /mnt/f' --description 'alias gotof=cd /mnt/f'
-  cd /mnt/f $argv;
+# Defined in /tmp/fish.lcdN8v/gotof.fish @ line 2
+function gotof --wraps='cd /mnt/f'
+  cd /media/pradyumna/files
 end
