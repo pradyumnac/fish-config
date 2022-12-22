@@ -1,3 +1,3 @@
 function ssh400
-  ssh pradyumna@r400 $argv; 
+  ssh pradyumna@192.168.0.125 $argv; 
 end
