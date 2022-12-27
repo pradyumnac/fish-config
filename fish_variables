@@ -1,7 +1,7 @@
 # This file contains fish universal variable definitions.
 # VERSION: 3.0
 SETUVAR --export BAT_THEME:Dracula
-SETUVAR --export BROWSER:lf
+SETUVAR --export BROWSER:xdg-open
 SETUVAR --export EDITOR:nvim
 SETUVAR --export EXPLORER:lf
 SETUVAR --export PAGER:less
