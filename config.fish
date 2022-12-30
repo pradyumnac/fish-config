@@ -21,7 +21,7 @@ set -gx FZF_DEFAULT_OPTS '-m --height 50% --border'
 
 if type rg &> /dev/null
   # set -gx FZF_DEFAULT_COMMAND 'rg --files --no-ignore-vcs --hidden'
-  set -gx FZF_DEFAULT_COMMAND 'rg --files'
+  set -gx FZF_DEFAULT_COMMAND 'rg --files --no-ignore'
 end
 
 # Starship
