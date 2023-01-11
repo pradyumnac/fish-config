@@ -27,3 +27,4 @@ end
 # Starship
 starship init fish | source
 source ~/repos/env/.gumrc
+zoxide init fish | source
