@@ -13,6 +13,7 @@ test -e ~/go/bin; and set -gx PATH $PATH $GOPATH/bin
 test -e /usr/local/go/bin; and set -gx PATH $PATH /usr/local/go/bin
 test -e /snap/bin; and set -gx PATH $PATH /snap/bin
 test -e ~/.cargo/bin; and set -gx PATH $PATH ~/.cargo/bin
+test -e ~/.sumneko/bin; and set -gx PATH $PATH ~/.sumneko/bin
 # test -e /opt/wine-staging/bin; and set -gx PATH $PATH /opt/wine-staging/bin
 
 # FZF setup
