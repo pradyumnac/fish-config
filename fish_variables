@@ -11,9 +11,9 @@ SETUVAR __fish_init_2_39_8:\x1d
 SETUVAR __fish_init_2_3_0:\x1d
 SETUVAR __fish_init_3_x:\x1d
 SETUVAR __fish_initialized:3100
+SETUVAR _fish_abbr_ls:lsd
 SETUVAR _fish_abbr_lst:ls\x20\x2dlat
 SETUVAR _fish_abbr_my_2D_ssh_2D_copy_2D_id:scp\x20\x7e/\x2essh/id_rsa\x2epub\x20your_username\x40192\x2e0\x2e2\x2e0\x3a\x7e/\x2essh/authorized_keys
-SETUVAR _fish_abbr_torr:transmission\x2dremote
 SETUVAR _fish_abbr_za:zoxide\x20add
 SETUVAR _fish_abbr_zq:zoxide\x20query
 SETUVAR _fish_abbr_zqi:zoxide\x20query\x20\x2di
