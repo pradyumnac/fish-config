@@ -1,5 +1,6 @@
 set -Ux PAGER less
 set -Ux EDITOR nvim
+set -Ux BAT-THEME gruvbox-dark
 set -Ux VISUAL nvim
 set -x LANG en_IN.UTF-8
 set -gx fish_greeting ''
