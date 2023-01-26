@@ -1,4 +1,4 @@
 function v --wraps=nvim --description 'alias v nvim'
-  nvim -p $argv
+  vlt -p $argv
         
 end
