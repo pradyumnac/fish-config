@@ -1,4 +1,4 @@
-function nbt --wraps='twitter;newsboat -u ~/repos/newsboat/urlcategory/twitter' --description 'alias nbt twitter;newsboat -u ~/repos/newsboat/urlcategory/twitter'
-  nohup twitter2rss&;newsboat -u ~/repos/newsboat/urlcategory/twitter $argv; 
+function nbt
+  nohup twitter2rss&;newsboat -u ~/.config/newsboat/urlcategory/twitter -c ~/.local/share/newsboat/cache.twitter.db
   rm nohup.out
 end

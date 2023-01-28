@@ -1,3 +1,3 @@
 function nby 
-  newsboat -u ~/repos/newsboat/urlcategory/youtube $argv; 
+  newsboat -u ~/.config/newsboat/urlcategory/youtube -c ~/.local/share/newsboat/cache.youtube.db 
 end

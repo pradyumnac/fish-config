@@ -1,3 +1,3 @@
 function nbp
-  newsboat -u ~/repos/newsboat/urlcategory/podcasts $argv; 
+  newsboat -u ~/.config/newsboat/urlcategory/podcasts -c ~/.local/share/newsboat/cache.podcasts.db 
 end
