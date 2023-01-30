@@ -55,7 +55,8 @@ function gb --description 'Browse git'
   
   if set -q _flag_fzf; vf; else; v; end
 
-  cd $curdir
+  # Stay in same directory
+  # cd $curdir
 
   if not set -q _flag_keep; rm -fR ~/repos/$foldername; end
 
